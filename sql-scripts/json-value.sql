@@ -23,7 +23,3 @@ SELECT
 CONVERT(datetime2, JSON_VALUE(Content, '$.CreatedUtc')) AS CreatedUTC
 FROM Document
 WHERE JSON_VALUE(Content, '$.ContentType') = 'BlogPost'
-
-## reference 
-## single text value of type nvarchar(4000). 
-
