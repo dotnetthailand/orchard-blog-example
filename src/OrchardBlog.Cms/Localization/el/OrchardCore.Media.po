@@ -4,13 +4,13 @@ msgstr ""
 "X-Crowdin-Project: orchard-core\n"
 "X-Crowdin-Project-ID: 307044\n"
 "X-Crowdin-Language: el\n"
-"X-Crowdin-File: /dev/Localization/OrchardCore.Media.pot\n"
-"X-Crowdin-File-ID: 582\n"
+"X-Crowdin-File: /main/Localization/OrchardCore.Media.pot\n"
+"X-Crowdin-File-ID: 778\n"
 "Project-Id-Version: orchard-core\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: Greek\n"
 "Language: el_GR\n"
-"PO-Revision-Date: 2021-06-20 18:52\n"
+"PO-Revision-Date: 2021-10-07 22:40\n"
 
 #. .Add(S["Content"], content => content
 #: OrchardCore.Media\AdminMenu.cs:25
@@ -80,67 +80,67 @@ msgstr "Προσωρινή μνήμη Media"
 
 #. error = S["This file extension is not allowed: {0}", Path.GetExtension(file.FileName)].ToString()
 #. return StatusCode(StatusCodes.Status400BadRequest, S["This file extension is not allowed: {0}", Path.GetExtension(newPath)]);
-#: OrchardCore.Media\Controllers\AdminController.cs:162
-#: OrchardCore.Media\Controllers\AdminController.cs:273
+#: OrchardCore.Media\Controllers\AdminController.cs:172
+#: OrchardCore.Media\Controllers\AdminController.cs:283
 msgctxt "OrchardCore.Media.Controllers.AdminController"
 msgid "This file extension is not allowed: {0}"
 msgstr "Αυτή η επέκταση αρχείου δεν επιτρέπεται: {0}"
 
 #. return StatusCode(StatusCodes.Status403Forbidden, S["Cannot delete root media folder"]);
-#: OrchardCore.Media\Controllers\AdminController.cs:215
+#: OrchardCore.Media\Controllers\AdminController.cs:225
 msgctxt "OrchardCore.Media.Controllers.AdminController"
 msgid "Cannot delete root media folder"
 msgstr "Δεν είναι δυνατή η διαγραφή του αρχικού φακέλου Media"
 
 #. return StatusCode(StatusCodes.Status403Forbidden, S["Cannot delete path because it is not a directory"]);
-#: OrchardCore.Media\Controllers\AdminController.cs:221
+#: OrchardCore.Media\Controllers\AdminController.cs:231
 msgctxt "OrchardCore.Media.Controllers.AdminController"
 msgid "Cannot delete path because it is not a directory"
 msgstr "Δεν είναι δυνατή η διαγραφή διαδρομής επειδή δεν είναι κατάλογος"
 
 #. return StatusCode(StatusCodes.Status400BadRequest, S["Cannot move media because a file already exists with the same name"]);
-#: OrchardCore.Media\Controllers\AdminController.cs:278
+#: OrchardCore.Media\Controllers\AdminController.cs:288
 msgctxt "OrchardCore.Media.Controllers.AdminController"
 msgid "Cannot move media because a file already exists with the same name"
 msgstr "Δεν είναι δυνατή η μετακίνηση του media επειδή ένα αρχείο υπάρχει ήδη με το ίδιο όνομα"
 
 #. return BadRequest(S["Error when moving files. Maybe they already exist on the target folder? Files on error: {0}", string.Join(",", filesOnError)].ToString());
-#: OrchardCore.Media\Controllers\AdminController.cs:354
+#: OrchardCore.Media\Controllers\AdminController.cs:364
 msgctxt "OrchardCore.Media.Controllers.AdminController"
 msgid "Error when moving files. Maybe they already exist on the target folder? Files on error: {0}"
 msgstr "Σφάλμα κατά τη μετακίνηση αρχείων. Ίσως υπάρχουν ήδη στον φάκελο προορισμού; Αρχεία σε σφάλμα: {0}"
 
 #. return StatusCode(StatusCodes.Status400BadRequest, S["Cannot create folder because the folder name contains invalid characters"]);
-#: OrchardCore.Media\Controllers\AdminController.cs:376
+#: OrchardCore.Media\Controllers\AdminController.cs:386
 msgctxt "OrchardCore.Media.Controllers.AdminController"
 msgid "Cannot create folder because the folder name contains invalid characters"
 msgstr ""
 
 #. return StatusCode(StatusCodes.Status400BadRequest, S["Cannot create folder because a folder already exists with the same name"]);
-#: OrchardCore.Media\Controllers\AdminController.cs:390
+#: OrchardCore.Media\Controllers\AdminController.cs:400
 msgctxt "OrchardCore.Media.Controllers.AdminController"
 msgid "Cannot create folder because a folder already exists with the same name"
 msgstr "Δεν είναι δυνατή η δημιουργία φακέλου επειδή ένας φάκελος υπάρχει ήδη με το ίδιο όνομα"
 
 #. return StatusCode(StatusCodes.Status400BadRequest, S["Cannot create folder because a file already exists with the same name"]);
-#: OrchardCore.Media\Controllers\AdminController.cs:396
+#: OrchardCore.Media\Controllers\AdminController.cs:406
 msgctxt "OrchardCore.Media.Controllers.AdminController"
 msgid "Cannot create folder because a file already exists with the same name"
 msgstr "Δεν είναι δυνατή η δημιουργία φακέλου επειδή ένα αρχείο υπάρχει ήδη με το ίδιο όνομα"
 
-#. _notifier.Error(H["The asset cache feature is enabled, but a remote media store feature is not enabled, or not configured with appsettings.json."]);
+#. await _notifier.ErrorAsync(H["The asset cache feature is enabled, but a remote media store feature is not enabled, or not configured with appsettings.json."]);
 #: OrchardCore.Media\Controllers\MediaCacheController.cs:61
 msgctxt "OrchardCore.Media.Controllers.MediaCacheController"
 msgid "The asset cache feature is enabled, but a remote media store feature is not enabled, or not configured with appsettings.json."
 msgstr "Η λειτουργία προσωρινής μνήμης του στοιχείου είναι ενεργοποιημένη, αλλά μια λειτουργία απομακρυσμένης αποθήκευσης πολυμέσων δεν είναι ενεργοποιημένη ή δεν έχει ρυθμιστεί με το appsettings.json."
 
-#. _notifier.Error(H["Asset cache purged, with errors."]);
+#. await _notifier.ErrorAsync(H["Asset cache purged, with errors."]);
 #: OrchardCore.Media\Controllers\MediaCacheController.cs:68
 msgctxt "OrchardCore.Media.Controllers.MediaCacheController"
 msgid "Asset cache purged, with errors."
 msgstr "Αποκατάσταση του πόρου της προσωρινής μνήμης, με σφάλματα."
 
-#. _notifier.Information(H["Asset cache purged."]);
+#. await _notifier.InformationAsync(H["Asset cache purged."]);
 #: OrchardCore.Media\Controllers\MediaCacheController.cs:72
 msgctxt "OrchardCore.Media.Controllers.MediaCacheController"
 msgid "Asset cache purged."
@@ -166,13 +166,13 @@ msgctxt "OrchardCore.Media.Controllers.MediaProfilesController"
 msgid "A profile with the same name already exists."
 msgstr ""
 
-#. _notifier.Success(H["Media profile deleted successfully."]);
+#. await _notifier.SuccessAsync(H["Media profile deleted successfully."]);
 #: OrchardCore.Media\Controllers\MediaProfilesController.cs:289
 msgctxt "OrchardCore.Media.Controllers.MediaProfilesController"
 msgid "Media profile deleted successfully."
 msgstr ""
 
-#. _notifier.Success(H["Media profiles successfully removed."]);
+#. await _notifier.SuccessAsync(H["Media profiles successfully removed."]);
 #: OrchardCore.Media\Controllers\MediaProfilesController.cs:316
 msgctxt "OrchardCore.Media.Controllers.MediaProfilesController"
 msgid "Media profiles successfully removed."
@@ -304,13 +304,13 @@ msgctxt "OrchardCore.Media.GraphQL.MediaAssetQuery"
 msgid "Whether to get the assets from just the top directory or from all sub-directories as well."
 msgstr "Είτε να πάρετε τους πόρους από τον ακριβώς από πάνω κατάλογο ή από όλους τους υπο-καταλόγους."
 
-#. <span v-show="!smallThumbs" title="@T[" Small Thumbs"]"><i class="fas fa-compress-alt"></i></span>
+#. <span v-show="!smallThumbs" title="@T[" Small Thumbs"]"><i class="fas fa-compress-alt" aria-hidden="true"></i></span>
 #: OrchardCore.Media\Views\MediaField-Attached.Edit.cshtml:25
 msgctxt "OrchardCore.Media.Views.MediaField-Attached.Edit"
 msgid " Small Thumbs"
 msgstr ""
 
-#. <span v-show="smallThumbs" title="@T[" Large Thumbs"]"><i class="fas fa-expand-alt"></i></span>
+#. <span v-show="smallThumbs" title="@T[" Large Thumbs"]"><i class="fas fa-expand-alt" aria-hidden="true"></i></span>
 #: OrchardCore.Media\Views\MediaField-Attached.Edit.cshtml:26
 msgctxt "OrchardCore.Media.Views.MediaField-Attached.Edit"
 msgid " Large Thumbs"
@@ -334,13 +334,13 @@ msgctxt "OrchardCore.Media.Views.MediaField.DisplayOption"
 msgid "Standard"
 msgstr "Καθιερωμένο"
 
-#. <span v-show="!smallThumbs" title="@T[" Small Thumbs"]"><i class="fas fa-compress-alt"></i></span>
+#. <span v-show="!smallThumbs" title="@T[" Small Thumbs"]"><i class="fas fa-compress-alt" aria-hidden="true"></i></span>
 #: OrchardCore.Media\Views\MediaField.Edit.cshtml:25
 msgctxt "OrchardCore.Media.Views.MediaField.Edit"
 msgid " Small Thumbs"
 msgstr ""
 
-#. <span v-show="smallThumbs" title="@T[" Large Thumbs"]"><i class="fas fa-expand-alt"></i></span>
+#. <span v-show="smallThumbs" title="@T[" Large Thumbs"]"><i class="fas fa-expand-alt" aria-hidden="true"></i></span>
 #: OrchardCore.Media\Views\MediaField.Edit.cshtml:26
 msgctxt "OrchardCore.Media.Views.MediaField.Edit"
 msgid " Large Thumbs"
@@ -362,7 +362,7 @@ msgstr "Επιλογή Media"
 #: OrchardCore.Media\Views\MediaField.Edit.cshtml:56
 msgctxt "OrchardCore.Media.Views.MediaField.Edit"
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #. <button type="button" class="btn btn-secondary" data-dismiss="modal">@T["Cancel"]</button>
 #: OrchardCore.Media\Views\MediaField.Edit.cshtml:57
@@ -440,7 +440,7 @@ msgstr "Το κείμενο υπόδειξης για εμφάνιση στον 
 #: OrchardCore.Media\Views\NavigationItemText-media.Id.cshtml:1
 msgctxt "OrchardCore.Media.Views.NavigationItemText-media.Id"
 msgid "Media"
-msgstr "Media"
+msgstr ""
 
 #. <h1 style="display:none">@RenderTitleSegments(T["Assets"])</h1>
 #: OrchardCore.Media\Views\Admin\Index.cshtml:43
@@ -486,25 +486,25 @@ msgctxt "OrchardCore.Media.Views.Admin.MediaApplication"
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#. <span title="@T["Grid View"]"><i class="fa fa-th-large"></i></span>
+#. <span title="@T["Grid View"]"><i class="fa fa-th-large" aria-hidden="true"></i></span>
 #: OrchardCore.Media\Views\Admin\MediaApplication.cshtml:42
 msgctxt "OrchardCore.Media.Views.Admin.MediaApplication"
 msgid "Grid View"
-msgstr "Grid View"
+msgstr ""
 
-#. <span title="@T["List View"]"><i class="fa fa-th-list"></i></span>
+#. <span title="@T["List View"]"><i class="fa fa-th-list" aria-hidden="true"></i></span>
 #: OrchardCore.Media\Views\Admin\MediaApplication.cshtml:45
 msgctxt "OrchardCore.Media.Views.Admin.MediaApplication"
 msgid "List View"
-msgstr "List View"
+msgstr ""
 
-#. <span title="@T["Small Thumbs"]"><i class="fa fa-compress"></i></span>
+#. <span title="@T["Small Thumbs"]"><i class="fa fa-compress" aria-hidden="true"></i></span>
 #: OrchardCore.Media\Views\Admin\MediaApplication.cshtml:50
 msgctxt "OrchardCore.Media.Views.Admin.MediaApplication"
 msgid "Small Thumbs"
 msgstr "Μικρές Μινιατούρες"
 
-#. <span title="@T["Large Thumbs"]"><i class="fa fa-expand"></i></span>
+#. <span title="@T["Large Thumbs"]"><i class="fa fa-expand" aria-hidden="true"></i></span>
 #: OrchardCore.Media\Views\Admin\MediaApplication.cshtml:53
 msgctxt "OrchardCore.Media.Views.Admin.MediaApplication"
 msgid "Large Thumbs"
@@ -852,6 +852,18 @@ msgctxt "OrchardCore.Media.Views.Admin.Options"
 msgid "The path used to store media assets. The path can be relative to the tenant's App_Data folder, or absolute."
 msgstr ""
 
+#. <label asp-for="AssetsUsersFolder" class="col-sm-2 col-form-label">@T["Assets users folder"]</label>
+#: OrchardCore.Media\Views\Admin\Options.cshtml:75
+msgctxt "OrchardCore.Media.Views.Admin.Options"
+msgid "Assets users folder"
+msgstr ""
+
+#. <span class="hint">@T["The folder under AssetsPath used to store users own media assets."]</span>
+#: OrchardCore.Media\Views\Admin\Options.cshtml:78
+msgctxt "OrchardCore.Media.Views.Admin.Options"
+msgid "The folder under AssetsPath used to store users own media assets."
+msgstr ""
+
 #. <h5>@T["All Media Profiles"]</h5>
 #: OrchardCore.Media\Views\Items\AllMediaProfilesDeploymentStep.Edit.cshtml:3
 msgctxt "OrchardCore.Media.Views.Items.AllMediaProfilesDeploymentStep.Edit"
@@ -886,7 +898,7 @@ msgstr ""
 #: OrchardCore.Media\Views\Items\MediaDeploymentStep.Fields.Edit.cshtml:3
 msgctxt "OrchardCore.Media.Views.Items.MediaDeploymentStep.Fields.Edit"
 msgid "Media"
-msgstr "Media"
+msgstr ""
 
 #. @T["Include all media."]
 #: OrchardCore.Media\Views\Items\MediaDeploymentStep.Fields.Edit.cshtml:12
@@ -904,7 +916,7 @@ msgstr "Το media που πρέπει να προστεθεί ως μέρος �
 #: OrchardCore.Media\Views\Items\MediaDeploymentStep.Fields.Summary.cshtml:9
 msgctxt "OrchardCore.Media.Views.Items.MediaDeploymentStep.Fields.Summary"
 msgid "Media"
-msgstr "Media"
+msgstr ""
 
 #. <span class="badge badge-success">@T["All"]</span>
 #: OrchardCore.Media\Views\Items\MediaDeploymentStep.Fields.Summary.cshtml:13
@@ -922,7 +934,7 @@ msgstr "Δεν έχει επιλεγεί κάποιο media."
 #: OrchardCore.Media\Views\Items\MediaDeploymentStep.Fields.Thumbnail.cshtml:3
 msgctxt "OrchardCore.Media.Views.Items.MediaDeploymentStep.Fields.Thumbnail"
 msgid "Media"
-msgstr "Media"
+msgstr ""
 
 #. <p>@T["Exports all or specified media."]</p>
 #: OrchardCore.Media\Views\Items\MediaDeploymentStep.Fields.Thumbnail.cshtml:4

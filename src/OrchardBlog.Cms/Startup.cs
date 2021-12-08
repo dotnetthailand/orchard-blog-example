@@ -11,7 +11,7 @@ namespace OrchardBlog.Cms
         {
             services.AddOrchardCms();
         }
-        
+
         public void Configure(IApplicationBuilder app, IHostEnvironment env)
         {
             if (env.IsDevelopment())
