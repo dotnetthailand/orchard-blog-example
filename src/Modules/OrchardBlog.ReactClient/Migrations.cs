@@ -2,7 +2,7 @@ using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.Data.Migration;
 
-namespace OrchardExample.ReactClient
+namespace OrchardBlog.ReactClient
 {
     public class Migrations : DataMigration
     {

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using OrchardCore.ContentManagement;
-using OrchardExample.ReactClient.Models;
-using OrchardExample.ReactClient.Settings;
+using OrchardBlog.ReactClient.Models;
+using OrchardBlog.ReactClient.Settings;
 
-namespace OrchardExample.ReactClient.ViewModels
+namespace OrchardBlog.ReactClient.ViewModels
 {
     public class TestPartViewModel
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace OrchardExample.ReactClient.Settings
+namespace OrchardBlog.ReactClient.Settings
 {
     public class TestPartSettingsViewModel
     {

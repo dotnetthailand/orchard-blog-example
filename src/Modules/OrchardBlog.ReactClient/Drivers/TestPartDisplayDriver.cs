@@ -4,11 +4,11 @@ using OrchardCore.ContentManagement.Display.Models;
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.DisplayManagement.ModelBinding;
 using OrchardCore.DisplayManagement.Views;
-using OrchardExample.ReactClient.Models;
-using OrchardExample.ReactClient.Settings;
-using OrchardExample.ReactClient.ViewModels;
+using OrchardBlog.ReactClient.Models;
+using OrchardBlog.ReactClient.Settings;
+using OrchardBlog.ReactClient.ViewModels;
 
-namespace OrchardExample.ReactClient.Drivers
+namespace OrchardBlog.ReactClient.Drivers
 {
     public class TestPartDisplayDriver : ContentPartDisplayDriver<TestPart>
     {

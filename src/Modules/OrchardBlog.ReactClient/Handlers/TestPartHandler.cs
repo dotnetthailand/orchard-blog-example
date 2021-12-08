@@ -1,8 +1,8 @@
 ﻿using OrchardCore.ContentManagement.Handlers;
 using System.Threading.Tasks;
-using OrchardExample.ReactClient.Models;
+using OrchardBlog.ReactClient.Models;
 
-namespace OrchardExample.ReactClient.Handlers
+namespace OrchardBlog.ReactClient.Handlers
 {
     public class TestPartHandler : ContentPartHandler<TestPart>
     {

@@ -1,4 +1,4 @@
-﻿namespace OrchardExample.ReactClient.Settings
+﻿namespace OrchardBlog.ReactClient.Settings
 {
     public class TestPartSettings
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace OrchardExample.ReactClient.Controllers
+namespace OrchardBlog.ReactClient.Controllers
 {
     public class HomeController : Controller
     {

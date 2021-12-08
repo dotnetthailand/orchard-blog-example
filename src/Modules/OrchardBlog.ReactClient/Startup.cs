@@ -8,14 +8,14 @@ using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.ContentManagement.Handlers;
 using OrchardCore.ContentTypes.Editors;
 using OrchardCore.Data.Migration;
-using OrchardExample.ReactClient.Drivers;
-using OrchardExample.ReactClient.Handlers;
-using OrchardExample.ReactClient.Models;
-using OrchardExample.ReactClient.Settings;
-using OrchardExample.ReactClient.ViewModels;
+using OrchardBlog.ReactClient.Drivers;
+using OrchardBlog.ReactClient.Handlers;
+using OrchardBlog.ReactClient.Models;
+using OrchardBlog.ReactClient.Settings;
+using OrchardBlog.ReactClient.ViewModels;
 using OrchardCore.Modules;
 
-namespace OrchardExample.ReactClient
+namespace OrchardBlog.ReactClient
 {
     public class Startup : StartupBase
     {
@@ -38,7 +38,7 @@ namespace OrchardExample.ReactClient
         {
             routes.MapAreaControllerRoute(
                 name: "Home",
-                areaName: "OrchardExample.ReactClient",
+                areaName: "OrchardBlog.ReactClient",
                 pattern: "Home/Index",
                 defaults: new { controller = "Home", action = "Index" }
             );

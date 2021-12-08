@@ -4,9 +4,9 @@ using OrchardCore.ContentManagement.Metadata.Models;
 using OrchardCore.ContentTypes.Editors;
 using OrchardCore.DisplayManagement.ModelBinding;
 using OrchardCore.DisplayManagement.Views;
-using OrchardExample.ReactClient.Models;
+using OrchardBlog.ReactClient.Models;
 
-namespace OrchardExample.ReactClient.Settings
+namespace OrchardBlog.ReactClient.Settings
 {
     public class TestPartSettingsDisplayDriver : ContentTypePartDefinitionDisplayDriver
     {

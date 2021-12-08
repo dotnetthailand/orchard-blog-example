@@ -1,6 +1,6 @@
 ﻿using OrchardCore.ContentManagement;
 
-namespace OrchardExample.ReactClient.Models
+namespace OrchardBlog.ReactClient.Models
 {
     public class TestPart : ContentPart
     {

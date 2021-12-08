@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Modules\OrchardExample.ReactClient\OrchardExample.ReactClient.csproj" />
+    <ProjectReference Include="..\Modules\OrchardBlog.ReactClient\OrchardBlog.ReactClient.csproj" />
   </ItemGroup>
 
 </Project>
