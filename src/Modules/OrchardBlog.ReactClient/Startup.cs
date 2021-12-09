@@ -39,8 +39,8 @@ namespace OrchardBlog.ReactClient
             routes.MapAreaControllerRoute(
                 name: "Home",
                 areaName: "OrchardBlog.ReactClient",
-                pattern: "Home/Index",
-                defaults: new { controller = "Home", action = "Index" }
+                pattern: "Authorization/{**slug}",
+                defaults: new { controller = "Authorization", action = "Index" }
             );
         }
     }

@@ -1,4 +1,6 @@
 const outputFileName = 'orchard-example-react-client';
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
+
 
 module.exports = {
   entry: {
@@ -10,7 +12,10 @@ module.exports = {
     filename: '[name].js',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    fallback: {
+      'crypto': require.resolve('crypto-browserify'),
+    }
   },
   module: {
     rules: [
@@ -23,7 +28,9 @@ module.exports = {
       },
     ]// End rules
   },
-  plugins: [],
+  plugins: [
+    new NodePolyfillPlugin(),
+  ],
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM'
