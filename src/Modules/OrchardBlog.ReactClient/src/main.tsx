@@ -24,21 +24,38 @@ import {
 
 import { onError } from '@apollo/client/link/error';
 import { setContext } from '@apollo/client/link/context';
-
 import DOMPurify from 'dompurify'; // XSS sanitizer
 
-const BLOG_POST_QUERY = gql`
-  query blogPostQuery {
-    blogPost {
-      title: displayText,
-      body: markdownBody {
-        html
-      }
-    }
-  }
-`;
+function App() {
+  return (
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/authorization" element={
+            <div>
+              <BlogPost />
+              <AuthorizationTestingFlow />
+            </div>
+          } />
+          <Route path="/authorization/callback" element={<AuthorizationCallback />} />
+        </Routes>
+      </Router>
+    </div>
+  )
+}
 
 function BlogPost() {
+  const BLOG_POST_QUERY = gql`
+    query blogPostQuery {
+      blogPost {
+        title: displayText,
+        body: markdownBody {
+          html
+        }
+      }
+    }
+  `;
+
   const { loading, error, data } = useQuery(BLOG_POST_QUERY);
 
   if (loading) return <p>Loading...</p>;
@@ -78,7 +95,6 @@ const promiseToObservable = (promise) => {
         if (subscriber.closed) {
           return;
         }
-
         // Back to body of error link to retry GraphQL API call again
         subscriber.next(value);
         subscriber.complete();
@@ -106,7 +122,7 @@ const errorLink = onError(({ graphQLErrors, networkError, operation, forward }) 
         },
       });
 
-      // retry the request, returning the new observable
+      // Retry the request, returning the new observable
       return forward(operation);
     });
   }
@@ -164,24 +180,6 @@ async function getNewToken() {
 
   console.log('Got token and set to local storage');
   return response.data.access_token;
-}
-
-function App() {
-  return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/authorization" element={
-            <div>
-              <BlogPost />
-              <AuthorizationTestingFlow />
-            </div>
-          } />
-          <Route path="/authorization/callback" element={<AuthorizationCallback />} />
-        </Routes>
-      </Router>
-    </div>
-  )
 }
 
 render(
