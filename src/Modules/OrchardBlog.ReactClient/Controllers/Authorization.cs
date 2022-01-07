@@ -9,6 +9,7 @@ namespace OrchardBlog.ReactClient.Controllers
 {
     public class AuthorizationController : Controller
     {
+        // Authorization
         [HttpGet]
         [HttpPost]
         public ActionResult Index ()

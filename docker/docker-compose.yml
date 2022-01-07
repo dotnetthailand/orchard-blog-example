@@ -8,10 +8,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: orchard-blog-sql-server-2019
+    image: ${COMPOSE_PROJECT_NAME:?err}-mssql-2019
     container_name: ${COMPOSE_PROJECT_NAME:?err}_db
     ports:
-      - 1433:1433
+      - 1499:1433
     volumes:
       - mssql_data:/var/opt/mssql/data
       - mssql_log:/var/opt/mssql/log
@@ -23,14 +23,18 @@ services:
       # https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-environment-variables?view=sql-server-ver15#environment-variables
       - ACCEPT_EULA=Y
       - MSSQL_PID=Express
-      - MSSQL_SA_PASSWORD=12345Abc$$ # Escape $ with $$
-
+      # We don't use MSSQL_SA_PASSWORD here because we will get a password from "MSSQL_SA_PASSWORD_FILE" in entrypoint.sh
+      - MSSQL_SA_PASSWORD_FILE=/run/secrets/sa_password
       - MSSQL_DATA_DIR=/var/opt/mssql/data
       - MSSQL_LOG_DIR=/var/opt/mssql/log
       - MSSQL_BACKUP_DIR=/var/opt/mssql/backup
 
     networks:
       - compose_network
+
+    # Use the defined secret
+    secrets:
+      - sa_password
 
 # Create name volumes managed by Docker to not lose data when remove a container
 # https://docs.docker.com/compose/compose-file/compose-file-v3/#volumes
@@ -41,3 +45,9 @@ volumes:
 
 networks:
   compose_network:
+
+# Define a secret at top level
+# External secrets are not available to containers created by docker-compose.
+secrets:
+  sa_password:
+    file: ./sa_password.secret # It has been ignored from the repository

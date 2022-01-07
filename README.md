@@ -1,13 +1,32 @@
 # orchard-blog-example
 
+connection string
+Orchard Blog
+Blog recipe
+
+SQL Server
+Server=localhost, 1499;Database=orchard-blog;User Id=sa;Password=12345Abc$
+
+
+admin
+admin@dotnetthailand.com
+12345Abc$
+
 ## slide
-- https://docs.google.com/presentation/d/1XSEpT8dmNTgyoPm2OGvHeMPiVKHl4o7sFv8bHzhO_HQ/edit#slide=id.gc6f9e470d_0_0
+
+- [Query JSON in SQL Server](https://docs.google.com/presentation/d/1XSEpT8dmNTgyoPm2OGvHeMPiVKHl4o7sFv8bHzhO_HQ/edit#slide=id.gc6f9e470d_0_0)
 
 
 ## OpenId server
-"OrchardCore.OpenId.Server",
-"OrchardCore.OpenId.Management",
-"OrchardCore.OpenId.Validation",
+Enable the following features
+// https://github.com/OrchardCMS/OrchardCore/blob/main/src/OrchardCore/OrchardCore.OpenId.Core/OpenIdConstants.cs
+- OrchardCore.OpenId
+- OrchardCore.OpenId.Server
+- OrchardCore.OpenId.Management
+- OrchardCore.OpenId.Validation
+- GraphQL
+
+// https://github.com/OrchardCMS/OrchardCore/blob/main/src/OrchardCore.Modules/OrchardCore.OpenId/Recipes/OpenIdServerSettingsStep.cs#L21
 
     {
       "name": "OpenIdServerSettings",
@@ -29,6 +48,8 @@
       "TokenEndpointPath": "https://localhost:44342/connect/token",
       "UserinfoEndpointPath": "https://localhost:44342/connect/userinfo"
     },
+
+
     {
       "DisplayName": "Authorization Code Flow",
       "name": "OpenIdApplication",

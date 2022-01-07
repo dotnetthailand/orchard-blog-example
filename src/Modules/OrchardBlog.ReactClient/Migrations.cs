@@ -1,4 +1,3 @@
-using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.Data.Migration;
 
@@ -13,13 +12,5 @@ namespace OrchardBlog.ReactClient
             _contentDefinitionManager = contentDefinitionManager;
         }
 
-        public int Create()
-        {
-            _contentDefinitionManager.AlterPartDefinition("TestPart", builder => builder
-                .Attachable()
-                .WithDescription("Provides a Test part for your content item."));
-
-            return 1;
-        }
     }
 }

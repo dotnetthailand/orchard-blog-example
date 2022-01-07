@@ -351,3 +351,4 @@ MigrationBackup/
 
 is-cache
 App_Data
+sa_password.secret
