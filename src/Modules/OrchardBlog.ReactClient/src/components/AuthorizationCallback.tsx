@@ -31,15 +31,15 @@ export default function AuthorizationCallback() {
       // Axios is able to accept a URLSearchParams instance which also set the appropriate Content-type header to application/x-www-form-urlencoded
       const parameters: Record<string, string> = {
         grant_type: 'authorization_code',
-        client_id: Configuration.REACT_APP_CLIENT_ID as string,
-        redirect_uri: Configuration.REACT_APP_REDIRECT_URI as string,
+        client_id: Configuration.CLIENT_ID as string,
+        redirect_uri: Configuration.REDIRECT_URI as string,
         code: authorizationCode,
         //code_verifier: getCodeVerifier(),
       };
 
       // Request token
       const response = await axios.post(
-        Configuration.REACT_APP_TOKEN_ENDPOINT as string,
+        Configuration.TOKEN_ENDPOINT as string,
         new URLSearchParams(parameters),
         config,
       );

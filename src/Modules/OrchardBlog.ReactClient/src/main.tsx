@@ -43,8 +43,8 @@ function BlogPost() {
 
   if (loading) return <p>Loading...</p>;
   if (error) {
-    const { networkError } = error as { networkError: ServerError };
-    return <p>Error, status code: {networkError.statusCode} :(</p>;
+    const { networkError: { response } } = error as { networkError: ServerError };
+    return <p>Error, status code: {response.status} :(</p>;
   }
 
   const blogPostList = data.blogPost.map(({ title, body: { html } }) => {
@@ -70,6 +70,7 @@ const contextLink = setContext(async (request, previousContext) => ({
 // Sometimes getting a new token or other data needed to perform a retry is an asynchronous task. 
 // In this case you need to return an `Observable` so that `apollo-link-error` can subscribe to its changes 
 // and call `forward` when the observable is completed.
+// From https://github.com/apollographql/apollo-link/pull/825/files
 const promiseToObservable = (promise) => {
   return new Observable((subscriber) => {
     promise.then(
@@ -77,10 +78,13 @@ const promiseToObservable = (promise) => {
         if (subscriber.closed) {
           return;
         }
+
+        // Back to body of error link to retry GraphQL API call again
         subscriber.next(value);
         subscriber.complete();
       },
       (err) => {
+        // not try to send GraphQL API again
         subscriber.error(err);
       },
     );
@@ -93,7 +97,6 @@ const errorLink = onError(({ graphQLErrors, networkError, operation, forward }) 
   if (statusCode === 401) {
 
     return promiseToObservable(getNewToken()).flatMap((newToken) => {
-      alert(newToken);
       // Modify the operation context with a new token
       const previousHeaders = operation.getContext().headers;
       operation.setContext({
@@ -136,7 +139,7 @@ async function getNewToken() {
   const refreshToken = localStorage.getItem('refresh_token') as string;
   const parameters: Record<string, string> = {
     grant_type: 'refresh_token', // Token endpoint but with refresh_token grant type
-    client_id: Configuration.REACT_APP_CLIENT_ID as string,
+    client_id: Configuration.CLIENT_ID as string,
     refresh_token: refreshToken,
   };
 
@@ -146,27 +149,22 @@ async function getNewToken() {
       // https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.3
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-  }
+  };
 
   // Request token
-  try {
-    const response = await axios.post(
-      Configuration.REACT_APP_TOKEN_ENDPOINT as string,
-      new URLSearchParams(parameters),
-      config,
-    );
+  const response = await axios.post(
+    Configuration.TOKEN_ENDPOINT as string,
+    new URLSearchParams(parameters),
+    config,
+  );
 
-    // Set new tokens to a local storage
-    localStorage.setItem('access_token', response.data.access_token);
-    localStorage.setItem('refresh_token', response.data.refresh_token);
+  // Set new tokens to a local storage
+  localStorage.setItem('access_token', response.data.access_token);
+  localStorage.setItem('refresh_token', response.data.refresh_token);
 
-    alert('Got token and set to local storage');
-    return response.data.access_token;
-  } catch (ex) {
-    console.error(ex);
-    return null;
-  }
-};
+  console.log('Got token and set to local storage');
+  return response.data.access_token;
+}
 
 function App() {
   return (

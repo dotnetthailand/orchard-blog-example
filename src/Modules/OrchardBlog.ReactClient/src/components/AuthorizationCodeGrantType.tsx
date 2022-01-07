@@ -1,27 +1,19 @@
 import { useState, useEffect } from 'react';
-import { generateCodeChallenge } from './PKCE';
 import Configuration from './Configuration';
 
 const AuthorizationCodeGrantType = () => {
   const [actionUrl, setActionUrl] = useState('');
 
   useEffect(() => {
-    const codeChallengeMethod = 'sha256';
-    const codeChallenge = generateCodeChallenge(codeChallengeMethod);
-    console.log(`Before sending code challenge value: ${codeChallenge}`);
-
     const parameters: Record<string, string> = {
-      client_id: Configuration.REACT_APP_CLIENT_ID as string,
-      redirect_uri: Configuration.REACT_APP_REDIRECT_URI as string,
-      // To do implement code challenge
-      //code_challenge: codeChallenge,
-      //code_challenge_method: 'S256',
+      client_id: Configuration.CLIENT_ID as string,
+      redirect_uri: Configuration.REDIRECT_URI as string,
       response_type: 'code',
       scope: 'offline_access' // set offline_access for getting refresh token in response body
     };
 
     // https://stackoverflow.com/a/44609277/1872200
-    const actionUrl = new URL(Configuration.REACT_APP_AUTHORIZATION_ENDPOINT as string);
+    const actionUrl = new URL(Configuration.AUTHORIZATION_ENDPOINT as string);
     Object.keys(parameters).forEach(key => actionUrl.searchParams.append(key, parameters[key]));
     setActionUrl(actionUrl.toString());
 
