@@ -13,10 +13,11 @@ const AuthorizationCodeGrantType = () => {
     const parameters: Record<string, string> = {
       client_id: Configuration.REACT_APP_CLIENT_ID as string,
       redirect_uri: Configuration.REACT_APP_REDIRECT_URI as string,
+      // To do implement code challenge
       //code_challenge: codeChallenge,
       //code_challenge_method: 'S256',
       response_type: 'code',
-      scope: 'OpenIdScope offline_access' // set offline_access for getting refresh token in response body
+      scope: 'offline_access' // set offline_access for getting refresh token in response body
     };
 
     // https://stackoverflow.com/a/44609277/1872200

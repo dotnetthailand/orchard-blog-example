@@ -149,17 +149,23 @@ async function getNewToken() {
   }
 
   // Request token
-  const response = await axios.post(
-    Configuration.REACT_APP_TOKEN_ENDPOINT as string,
-    new URLSearchParams(parameters),
-    config,
-  );
+  try {
+    const response = await axios.post(
+      Configuration.REACT_APP_TOKEN_ENDPOINT as string,
+      new URLSearchParams(parameters),
+      config,
+    );
 
-  // Set new tokens to a local storage
-  localStorage.setItem('access_token', response.data.access_token);
-  localStorage.setItem('refresh_token', response.data.refresh_token);
-  //alert('Got token and set to local storage');
-  return response.data.access_token;
+    // Set new tokens to a local storage
+    localStorage.setItem('access_token', response.data.access_token);
+    localStorage.setItem('refresh_token', response.data.refresh_token);
+
+    alert('Got token and set to local storage');
+    return response.data.access_token;
+  } catch (ex) {
+    console.error(ex);
+    return null;
+  }
 };
 
 function App() {
